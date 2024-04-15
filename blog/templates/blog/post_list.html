@@ -4,7 +4,16 @@
         <title>All about birds</title>
     </head>
     <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
+        <header>
+            <h1>To bird or not to bird: a feathery blog</h1>
+        </header>
+
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
     </body>
 </html>
